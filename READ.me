@@ -1,0 +1,59 @@
+# 🚢 Titanic - Omon qolish ehtimolini bashorat qilish
+
+Ushbu loyiha **Titanic** kemasidagi yo‘lovchilarning ma'lumotlari asosida ularning omon qolish ehtimolini **mashinaviy o‘rganish (machine learning)** yordamida aniqlashga qaratilgan.
+
+---
+
+## 📂 Loyihadagi fayllar
+
+- `data.csv` – Titanic kemasidagi yo‘lovchilar haqidagi ma'lumotlar
+- `model.ipynb` – Loyihaning asosiy Jupyter Notebook fayli (model qurilgan)
+- `requirements.txt` – Loyihada ishlatilgan Python kutubxonalari ro‘yxati
+- `roc_curve_logistic_regression.png` – Logistic Regression modelining ROC Curve grafikasi
+
+---
+
+## 🎯 Loyiha maqsadi
+
+Yo‘lovchining quyidagi xususiyatlari orqali uning omon qolganini yoki yo‘q ekanligini bashorat qilish:
+
+- Pclass – Yo‘lovchi sinfi (1, 2, 3)
+- Sex – Jinsi (ayol/erkak)
+- Age – Yoshi
+- SibSp – Qancha aka-uka, opa-singillari bor
+- Parch – Ota-ona yoki farzandlar soni
+- Fare – Chipta narxi
+- Embarked – Qaysi portdan chiqqani
+
+---
+
+## ⚙️ Texnologiyalar va usullar
+
+- 🔍 **Ma'lumotlarni tozalash** – Keraksiz ustunlar olib tashlandi (`Name`, `Ticket`, `Cabin`)
+- 🧼 **Missing values** to‘ldirildi (`Age`, `Embarked`)
+- 🔢 **One-hot encoding** (`Sex`, `Embarked`)
+- 📊 **Masshtablash** – `StandardScaler` orqali raqamli ustunlar normallashtirildi
+- 🤖 **Model** – Logistic Regression
+- 📈 **Baholash** – ROC Curve, Confusion Matrix, Accuracy, Precision, Recall, F1-score
+
+---
+
+## 🔬 Model natijalari
+
+- **Aniqlik (Accuracy)**: `81%`
+- **AUC Score**: `0.88`
+
+![ROC Curve](roc_curve_logistic_regression.png)
+
+---
+
+## ▶️ Loyihani ishga tushirish
+
+1. **Virtual muhit yaratish va kutubxonalarni o‘rnatish:**
+
+```bash
+python -m venv venv
+source venv/bin/activate       # Linux/macOS
+venv\Scripts\activate          # Windows
+
+pip install -r requirements.txt
